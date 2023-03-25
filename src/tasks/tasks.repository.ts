@@ -4,7 +4,7 @@ import { CreateTaskDto } from './dto/create-task.dto';
 import { TaskStatus } from './task.model';
 import { Injectable } from '@nestjs/common';
 
-@Injectable()
+@EntityRepository(Task)
 export class TasksRepository extends Repository<Task> {
   constructor(private dataSource: DataSource) {
     super(Task, dataSource.createEntityManager());
